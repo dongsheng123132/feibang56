@@ -280,48 +280,29 @@ export default function Home() {
             一手庄家 · 15年专业经验 · 真实实力展现
           </p>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src={OSS_IMAGES.company1}
-                  alt="现代化仓储设施"
-                  fill
-                  className="object-cover"
-                />
+            {[
+              { src: '/company-1.png', title: '现代化仓储设施', desc: '配备先进的仓储管理系统，确保货物安全存储' },
+              { src: '/company-2.jpg', title: '专业操作团队', desc: '经验丰富的物流专家，提供专业的货物处理服务' },
+              { src: '/company-3.jpg', title: '完善的包装设备', desc: '专业的包装流水线，确保货物运输安全' },
+              { src: '/company-4.jpg', title: '货物装卸现场', desc: '标准化的装卸作业流程，高效安全' },
+              { src: '/company-5.jpg', title: '物流运输车队', desc: '自有运输车队，提供门到门配送服务' },
+              { src: '/company-6.jpg', title: '海运集装箱操作', desc: '专业的集装箱装卸和海运操作经验' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">现代化仓储设施</h3>
-                <p className="text-gray-600">配备先进的仓储管理系统，确保货物安全存储</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src={OSS_IMAGES.company2}
-                  alt="专业操作团队"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">专业操作团队</h3>
-                <p className="text-gray-600">经验丰富的物流专家，提供专业的货物处理服务</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src={OSS_IMAGES.company3}
-                  alt="完善的包装设备"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">完善的包装设备</h3>
-                <p className="text-gray-600">专业的包装流水线，确保货物运输安全</p>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="text-center">
             <a

@@ -2,37 +2,37 @@
 
 import Image from 'next/image';
 import { CheckCircle, Users, Award, Globe, Truck, Ship } from 'lucide-react';
-import { OSS_IMAGES } from '@/config/oss';
+
 
 export default function AboutPage() {
   const companyImages = [
     {
-      src: OSS_IMAGES.company1,
+      src: '/company-1.png',
       title: '现代化仓储设施',
       description: '配备先进的仓储管理系统，确保货物安全存储'
     },
     {
-      src: OSS_IMAGES.company2,
+      src: '/company-2.jpg',
       title: '专业操作团队',
       description: '经验丰富的物流专家，提供专业的货物处理服务'
     },
     {
-      src: OSS_IMAGES.company3,
+      src: '/company-3.jpg',
       title: '完善的包装设备',
       description: '专业的包装流水线，确保货物运输安全'
     },
     {
-      src: OSS_IMAGES.company4,
+      src: '/company-4.jpg',
       title: '货物装卸现场',
       description: '标准化的装卸作业流程，高效安全'
     },
     {
-      src: OSS_IMAGES.company5,
+      src: '/company-5.jpg',
       title: '物流运输车队',
       description: '自有运输车队，提供门到门配送服务'
     },
     {
-      src: OSS_IMAGES.company6,
+      src: '/company-6.jpg',
       title: '海运集装箱操作',
       description: '专业的集装箱装卸和海运操作经验'
     }
