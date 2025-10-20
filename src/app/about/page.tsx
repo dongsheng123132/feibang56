@@ -3,36 +3,42 @@
 import Image from 'next/image';
 import { CheckCircle, Users, Award, Globe, Truck, Ship } from 'lucide-react';
 
+import company1 from '../../../public/company-1.jpg'
+import company2 from '../../../public/company-2.jpg'
+import company3 from '../../../public/company-3.jpg'
+import company4 from '../../../public/company-4.jpg'
+import company5 from '../../../public/company-5.jpg'
+import company6 from '../../../public/company-6.jpg'
 
 export default function AboutPage() {
   const companyImages = [
     {
-      src: '/company-1.png',
+      src: company1,
       title: '现代化仓储设施',
       description: '配备先进的仓储管理系统，确保货物安全存储'
     },
     {
-      src: '/company-2.jpg',
+      src: company2,
       title: '专业操作团队',
       description: '经验丰富的物流专家，提供专业的货物处理服务'
     },
     {
-      src: '/company-3.jpg',
+      src: company3,
       title: '完善的包装设备',
       description: '专业的包装流水线，确保货物运输安全'
     },
     {
-      src: '/company-4.jpg',
+      src: company4,
       title: '货物装卸现场',
       description: '标准化的装卸作业流程，高效安全'
     },
     {
-      src: '/company-5.jpg',
+      src: company5,
       title: '物流运输车队',
       description: '自有运输车队，提供门到门配送服务'
     },
     {
-      src: '/company-6.jpg',
+      src: company6,
       title: '海运集装箱操作',
       description: '专业的集装箱装卸和海运操作经验'
     }
@@ -153,8 +159,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 公司实拍图片 */}
-      <section className="py-20 bg-gray-50">
+      {/* 公司实力展示 */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">公司实力展示</h2>
           <p className="text-xl text-center text-gray-600 mb-16">
@@ -163,7 +169,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {companyImages.map((image, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative h-64">
+                <div className="relative h-48">
                   <Image
                     src={image.src}
                     alt={image.title}
@@ -172,7 +178,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{image.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-black">{image.title}</h3>
                   <p className="text-gray-600">{image.description}</p>
                 </div>
               </div>

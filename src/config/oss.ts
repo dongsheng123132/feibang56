@@ -38,7 +38,7 @@ export const getOptimizedImageUrl = (imageName: string, width?: number, height?:
 // 预定义的常用图片URL
 export const OSS_IMAGES = {
   logo: getOSSImageUrl('logo.jpg'),
-  company1: getOSSImageUrl('company-1.png'),
+  company1: getOSSImageUrl('company-1.jpg'),
   company2: getOSSImageUrl('company-2.jpg'),
   company3: getOSSImageUrl('company-3.jpg'),
   company4: getOSSImageUrl('company-4.jpg'),

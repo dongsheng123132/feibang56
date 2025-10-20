@@ -2,6 +2,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Truck, Ship, Plane, Shield, Clock, Award, Phone, ArrowRight, CheckCircle } from 'lucide-react'
 import { OSS_IMAGES } from '@/config/oss'
+import company1 from '../../public/company-1.jpg'
+import company2 from '../../public/company-2.jpg'
+import company3 from '../../public/company-3.jpg'
+import company4 from '../../public/company-4.jpg'
+import company5 from '../../public/company-5.jpg'
+import company6 from '../../public/company-6.jpg'
 
 export default function Home() {
   return (
@@ -275,18 +281,18 @@ export default function Home() {
       {/* 公司实力展示 */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">公司实力展示</h2>
-          <p className="text-xl text-center text-gray-600 mb-12">
-            一手庄家 · 15年专业经验 · 真实实力展现
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">公司实力展示</h2>
+          <p className="text-xl text-center text-gray-600 mb-16">
+            真实的公司环境和专业设备，展现我们的实力和专业水准
           </p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { src: '/company-1.png', title: '现代化仓储设施', desc: '配备先进的仓储管理系统，确保货物安全存储' },
-              { src: '/company-2.jpg', title: '专业操作团队', desc: '经验丰富的物流专家，提供专业的货物处理服务' },
-              { src: '/company-3.jpg', title: '完善的包装设备', desc: '专业的包装流水线，确保货物运输安全' },
-              { src: '/company-4.jpg', title: '货物装卸现场', desc: '标准化的装卸作业流程，高效安全' },
-              { src: '/company-5.jpg', title: '物流运输车队', desc: '自有运输车队，提供门到门配送服务' },
-              { src: '/company-6.jpg', title: '海运集装箱操作', desc: '专业的集装箱装卸和海运操作经验' },
+              { src: company1, title: '现代化仓储设施', desc: '配备先进的仓储管理系统，确保货物安全存储' },
+              { src: company2, title: '专业操作团队', desc: '经验丰富的物流专家，提供专业的货物处理服务' },
+              { src: company3, title: '完善的包装设备', desc: '专业的包装流水线，确保货物运输安全' },
+              { src: company4, title: '货物装卸现场', desc: '标准化的装卸作业流程，高效安全' },
+              { src: company5, title: '物流运输车队', desc: '自有运输车队，提供门到门配送服务' },
+              { src: company6, title: '海运集装箱操作', desc: '专业的集装箱装卸和海运操作经验' },
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="relative h-48">
@@ -298,7 +304,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-black">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
                 </div>
               </div>
