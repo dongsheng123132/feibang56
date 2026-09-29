@@ -35,23 +35,29 @@ export const getOptimizedImageUrl = (imageName: string, width?: number, height?:
   return baseUrl;
 };
 
+// 站内图片地址（public/ 目录，随站点一起部署）
+export function getLocalImageUrl(filename: string): string {
+  return `/${filename}`;
+}
+
 // 预定义的常用图片URL
+// OSS 桶 feibang56 已拒绝公开访问（403 AccessDenied），这里改用 public/ 下的同名文件
 export const OSS_IMAGES = {
-  logo: getOSSImageUrl('logo.jpg'),
-  company1: getOSSImageUrl('company-1.jpg'),
-  company2: getOSSImageUrl('company-2.jpg'),
-  company3: getOSSImageUrl('company-3.jpg'),
-  company4: getOSSImageUrl('company-4.jpg'),
-  company5: getOSSImageUrl('company-5.jpg'),
-  company6: getOSSImageUrl('company-6.jpg'),
-  company7: getOSSImageUrl('company-7.png'),
-  company8: getOSSImageUrl('company-8.jpg'),
-  company9: getOSSImageUrl('company-9.jpg'),
-  company10: getOSSImageUrl('company-10.jpg'),
-  company11: getOSSImageUrl('company-11.jpg'),
-  company12: getOSSImageUrl('company-12.jpg'),
-  wechatQR: getOSSImageUrl('wechat-qr-real.png'),
-  wechatQRNew: getOSSImageUrl('wechat-qr-new.jpg')
+  logo: getLocalImageUrl('logo.jpg'),
+  company1: getLocalImageUrl('company-1.jpg'),
+  company2: getLocalImageUrl('company-2.jpg'),
+  company3: getLocalImageUrl('company-3.jpg'),
+  company4: getLocalImageUrl('company-4.jpg'),
+  company5: getLocalImageUrl('company-5.jpg'),
+  company6: getLocalImageUrl('company-6.jpg'),
+  company7: getLocalImageUrl('company-7.png'),
+  company8: getLocalImageUrl('company-8.jpg'),
+  company9: getLocalImageUrl('company-9.jpg'),
+  company10: getLocalImageUrl('company-10.jpg'),
+  company11: getLocalImageUrl('company-11.jpg'),
+  company12: getLocalImageUrl('company-12.jpg'),
+  wechatQR: getLocalImageUrl('wechat-qr-real.png'),
+  wechatQRNew: getLocalImageUrl('wechat-qr-new.jpg')
 };
 
 // 动态获取公司图片的辅助函数
