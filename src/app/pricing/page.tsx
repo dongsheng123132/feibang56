@@ -1,7 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import { Calculator, Ship, Plane, Truck, Package, Clock, Shield, CheckCircle, Phone, Mail, MessageCircle } from 'lucide-react'
 import { OSS_IMAGES } from '@/config/oss'
+import { baseOpenGraph } from '@/config/seo'
+
+export const metadata: Metadata = {
+  title: '价格中心：菲律宾专线运费参考',
+  description: '透明价格，优质服务，马尼拉双清包税到门专线，海运空运双渠道满足您的不同需求',
+  alternates: {
+    canonical: '/pricing/',
+  },
+  openGraph: {
+    ...baseOpenGraph,
+    url: '/pricing/',
+  },
+}
 
 export default function Pricing() {
   return (

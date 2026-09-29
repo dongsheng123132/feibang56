@@ -62,7 +62,7 @@ export default function Header() {
           </div>
 
           {/* 桌面导航 */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               首页
             </Link>
@@ -90,7 +90,7 @@ export default function Header() {
           </nav>
 
           {/* 移动端菜单按钮 */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-blue-600 p-2"
@@ -103,7 +103,7 @@ export default function Header() {
 
       {/* 移动端导航菜单 */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="lg:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <Link

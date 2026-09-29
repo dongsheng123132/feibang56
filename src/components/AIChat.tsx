@@ -188,7 +188,7 @@ export default function AIChat() {
           </button>
           
           {/* 提示气泡 */}
-          <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-lg p-3 max-w-48 animate-bounce">
+          <div className="hidden md:block absolute bottom-16 right-0 bg-white rounded-lg shadow-lg p-3 w-44 animate-bounce">
             <div className="text-sm text-gray-700 font-medium">有问题？问我吧！</div>
             <div className="text-xs text-gray-500">AI智能客服为您服务</div>
             <div className="absolute bottom-0 right-4 transform translate-y-1/2 rotate-45 w-2 h-2 bg-white border-r border-b border-gray-200"></div>
@@ -198,7 +198,7 @@ export default function AIChat() {
 
       {/* 聊天窗口 */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden border border-gray-200">
+        <div className="fixed right-4 bottom-4 w-[calc(100vw-2rem)] h-[75vh] sm:right-6 sm:bottom-6 sm:w-96 sm:h-[600px] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden border border-gray-200">
           {/* 头部 */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">

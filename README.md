@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 菲邦物流官网
 
-## Getting Started
+深圳市菲邦国际物流有限公司官方网站，展示菲律宾专线物流服务（海运/空运 DDP 双清包税到门）、报价中心、客户案例、常见问题和货物跟踪等内容。
 
-First, run the development server:
+## 技术栈
+
+- [Next.js](https://nextjs.org)（App Router，静态导出 `output: 'export'`）
+- TypeScript
+- Tailwind CSS 4
+
+## 本地开发
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+然后打开 [http://localhost:3000](http://localhost:3000) 查看效果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 构建
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+构建产物输出到 `out/` 目录（纯静态文件）。
 
-To learn more about Next.js, take a look at the following resources:
+## 部署
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+代码 push 到 `main` 分支后由 Vercel 自动构建部署。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 正式域名：https://www.phibong.com
+- `feibang56.vercel.app` 是 Vercel 的预览域名，国内网络无法正常访问，**不要把这个地址发给客户**。
 
-## Deploy on Vercel
+## 图片资源
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+网站所有图片放在 `public/` 目录下，随静态站点一起部署（不依赖外部图床/OSS）。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## SEO / GEO 相关文件
+
+- `src/app/layout.tsx`：全站默认 metadata、`viewport`、以及 `LocalBusiness` / `WebSite` 的 JSON-LD 结构化数据。
+- 各页面 `page.tsx`（`/`、`/philippines-line/`、`/pricing/`、`/contact/`）或对应的 `layout.tsx`（`/about/`、`/cases/`、`/faq/`、`/tracking/`）：每页独立的 `title`/`description`/`canonical`。
+- `src/app/faq/page.tsx`：FAQ 全部问答均渲染进 DOM（未选中分类/未展开的答案用 CSS 隐藏），并附带 `FAQPage` JSON-LD。
+- `src/app/sitemap.ts`：站点地图。
+- `src/app/robots.ts`：搜索引擎与 AI 爬虫抓取规则。
+- `public/llms.txt`：面向 AI 搜索/大模型的站点摘要（[llmstxt.org](https://llmstxt.org) 格式）。

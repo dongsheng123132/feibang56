@@ -10,7 +10,6 @@
     "compress": "node scripts/compress-images.js"
   },
   "dependencies": {
-    "ali-oss": "^6.23.0",
     "lucide-react": "^0.544.0",
     "next": "15.5.26",
     "react": "19.1.0",

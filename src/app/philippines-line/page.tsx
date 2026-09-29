@@ -1,5 +1,19 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { Ship, Plane, Clock, Shield, CheckCircle, Phone, Calculator, Truck, Package, Globe } from 'lucide-react'
+import { baseOpenGraph } from '@/config/seo'
+
+export const metadata: Metadata = {
+  title: '菲律宾专线：海运空运 DDP 双清包税到门',
+  description: '专业的菲律宾双清包税到门服务，海运空运双渠道，时效稳定，价格优惠，让您的货物安全快捷到达马尼拉',
+  alternates: {
+    canonical: '/philippines-line/',
+  },
+  openGraph: {
+    ...baseOpenGraph,
+    url: '/philippines-line/',
+  },
+}
 
 export default function PhilippinesLine() {
   return (

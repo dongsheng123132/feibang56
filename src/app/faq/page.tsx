@@ -121,8 +121,36 @@ export default function FAQPage() {
     setOpenFAQ(openFAQ === id ? null : id);
   };
 
+  const cleanAnswerText = (text: string) =>
+    text
+      .split('\n')
+      .map((line) => line.replace(/^•\s*/, '').trim())
+      .filter(Boolean)
+      .map((line) => (/[。！？：:；]$/.test(line) ? line : `${line}；`))
+      .join('')
+      .replace(/；$/, '。');
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: Object.values(faqs)
+      .flat()
+      .map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: cleanAnswerText(faq.answer),
+        },
+      })),
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -133,7 +161,7 @@ export default function FAQPage() {
               📞 客服热线：<span className="font-bold">18665996202</span>
             </p>
             <p className="text-lg mt-2">
-              💬 微信咨询：<span className="font-bold">feibang-logistics</span>
+              💬 微信咨询：<span className="font-bold">SGLYwjm</span>
             </p>
           </div>
         </div>
@@ -164,30 +192,33 @@ export default function FAQPage() {
       {/* FAQ Content */}
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="space-y-4">
-            {faqs[activeCategory as keyof typeof faqs]?.map((faq) => (
-              <div key={faq.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <button
-                  onClick={() => toggleFAQ(faq.id)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
-                  <span className={`transform transition-transform ${
-                    openFAQ === faq.id ? 'rotate-180' : ''
-                  }`}>
-                    ▼
-                  </span>
-                </button>
-                {openFAQ === faq.id && (
-                  <div className="px-6 pb-4">
+          {categories.map((category) => (
+            <div
+              key={category.id}
+              className={activeCategory === category.id ? 'space-y-4' : 'hidden'}
+            >
+              {faqs[category.id as keyof typeof faqs].map((faq) => (
+                <div key={faq.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <button
+                    onClick={() => toggleFAQ(faq.id)}
+                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                    <span className={`transform transition-transform ${
+                      openFAQ === faq.id ? 'rotate-180' : ''
+                    }`}>
+                      ▼
+                    </span>
+                  </button>
+                  <div className={openFAQ === faq.id ? 'px-6 pb-4' : 'hidden'}>
                     <div className="border-t pt-4">
                       <div className="text-gray-700 whitespace-pre-line">{faq.answer}</div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -230,8 +261,8 @@ export default function FAQPage() {
               <div className="text-4xl mb-4">📧</div>
               <h3 className="text-xl font-bold mb-2">邮件咨询</h3>
               <p className="text-gray-600 mb-4">24小时内回复</p>
-              <a href="mailto:service@feibang.com" className="text-blue-600 font-bold text-lg">
-                service@feibang.com
+              <a href="mailto:506282956@qq.com" className="text-blue-600 font-bold text-lg">
+                506282956@qq.com
               </a>
             </div>
           </div>

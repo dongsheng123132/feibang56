@@ -1,6 +1,20 @@
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, User, Package } from 'lucide-react'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import { OSS_IMAGES } from '@/config/oss'
+import { baseOpenGraph } from '@/config/seo'
+
+export const metadata: Metadata = {
+  title: '联系我们',
+  description: '专业的菲律宾物流服务团队，随时为您提供咨询和报价服务',
+  alternates: {
+    canonical: '/contact/',
+  },
+  openGraph: {
+    ...baseOpenGraph,
+    url: '/contact/',
+  },
+}
 
 export default function Contact() {
   return (

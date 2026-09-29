@@ -1,13 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import { Truck, Ship, Plane, Shield, Clock, Award, Phone, ArrowRight, CheckCircle } from 'lucide-react'
 import { OSS_IMAGES } from '@/config/oss'
+import { baseOpenGraph } from '@/config/seo'
 import company1 from '../../public/company-1.jpg'
 import company2 from '../../public/company-2.jpg'
 import company3 from '../../public/company-3.jpg'
 import company4 from '../../public/company-4.jpg'
 import company5 from '../../public/company-5.jpg'
 import company6 from '../../public/company-6.jpg'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    ...baseOpenGraph,
+    url: '/',
+  },
+}
 
 export default function Home() {
   return (
