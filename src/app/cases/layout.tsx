@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { baseOpenGraph } from '@/config/seo'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: '客户案例',
@@ -17,5 +18,10 @@ export default function CasesLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return children
+  return (
+    <>
+      <BreadcrumbJsonLd items={[{ name: '客户案例', path: '/cases/' }]} />
+      {children}
+    </>
+  )
 }

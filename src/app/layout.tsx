@@ -37,7 +37,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": "https://www.phibong.com/#org",
       name: "深圳市菲邦国际物流有限公司",
-      alternateName: ["菲邦物流", "菲邦国际物流"],
+      alternateName: ["菲邦物流", "菲邦国际物流", "Fibong International Logistics"],
       url: "https://www.phibong.com/",
       logo: "https://www.phibong.com/logo.jpg",
       image: "https://www.phibong.com/logo.jpg",

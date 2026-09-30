@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Calculator, Ship, Plane, Truck, Package, Clock, Shield, CheckCircle, Phone, Mail, MessageCircle } from 'lucide-react'
 import { OSS_IMAGES } from '@/config/oss'
 import { baseOpenGraph } from '@/config/seo'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: '价格中心：菲律宾专线运费参考',
@@ -17,9 +18,43 @@ export const metadata: Metadata = {
   },
 }
 
+// 价格数字均取自本页已显示的报价（空运按 kg 计，海运按立方米计）
+const pricingTiers: { name: string; price: number; unitText: string }[] = [
+  { name: '马尼拉空运 普通货物 100公斤起', price: 22.5, unitText: 'kg' },
+  { name: '马尼拉空运 普通货物 500公斤起', price: 22, unitText: 'kg' },
+  { name: '马尼拉空运 普通货物 吨货价格', price: 21.5, unitText: 'kg' },
+  { name: '马尼拉空运 敏感货物 100公斤起', price: 31, unitText: 'kg' },
+  { name: '马尼拉海运 普通货物', price: 700, unitText: '立方米' },
+  { name: '马尼拉海运 敏感货物', price: 800, unitText: '立方米' },
+  { name: '马尼拉海运 特殊货物', price: 900, unitText: '立方米' },
+]
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: '菲律宾专线物流',
+  provider: { '@id': 'https://www.phibong.com/#org' },
+  areaServed: { '@type': 'Country', name: '菲律宾' },
+  offers: pricingTiers.map((tier) => ({
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      name: tier.name,
+      price: tier.price,
+      priceCurrency: 'CNY',
+      unitText: tier.unitText,
+    },
+  })),
+}
+
 export default function Pricing() {
   return (
     <div className="min-h-screen">
+      <BreadcrumbJsonLd items={[{ name: '价格中心', path: '/pricing/' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd).replace(/</g, '\\u003c') }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

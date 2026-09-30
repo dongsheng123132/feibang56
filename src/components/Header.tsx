@@ -55,7 +55,7 @@ export default function Header() {
                 />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-blue-900">菲邦物流</h1>
+                <div className="text-xl font-bold text-blue-900">菲邦物流</div>
                 <p className="text-xs text-blue-600 font-medium">一手庄家 · 专业菲律宾专线</p>
               </div>
             </Link>

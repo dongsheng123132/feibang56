@@ -3,6 +3,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { OSS_IMAGES } from '@/config/oss'
 import { baseOpenGraph } from '@/config/seo'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: '联系我们',
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <div className="min-h-screen">
+      <BreadcrumbJsonLd items={[{ name: '联系我们', path: '/contact/' }]} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

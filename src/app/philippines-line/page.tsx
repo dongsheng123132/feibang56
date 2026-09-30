@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Ship, Plane, Clock, Shield, CheckCircle, Phone, Calculator, Truck, Package, Globe } from 'lucide-react'
 import { baseOpenGraph } from '@/config/seo'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: '菲律宾专线：海运空运 DDP 双清包税到门',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 export default function PhilippinesLine() {
   return (
     <div className="min-h-screen">
+      <BreadcrumbJsonLd items={[{ name: '菲律宾专线', path: '/philippines-line/' }]} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
