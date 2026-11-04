@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "compress": "node scripts/compress-images.js"
+    "compress": "node scripts/compress-images.js",
+    "gen:llms": "node --no-warnings scripts/gen-llms.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.544.0",

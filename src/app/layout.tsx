@@ -4,7 +4,16 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AIChat from "@/components/AIChat";
-import { baseOpenGraph } from "@/config/seo";
+import {
+  baseOpenGraph,
+  COMPANY,
+  ORGANIZATION_ID,
+  WEBSITE_ID,
+  SITE_URL,
+  postalAddress,
+  serviceJsonLd,
+  offerCatalogJsonLd,
+} from "@/config/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,71 +22,116 @@ const inter = Inter({
 
 const siteDescription = "深圳市菲邦国际物流有限公司，专注菲律宾专线物流服务，提供海运、空运DDP双清包税到门服务，时效稳定，价格优惠。联系电话：18665996202";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.phibong.com"),
-  title: {
-    default: "菲邦国际物流 - 专业菲律宾专线物流服务",
-    template: "%s | 菲邦国际物流",
+/** AI/搜索引擎抓取指令：允许全文摘引（默认只给 ~160 字摘要，AI 就没法引用完整答案） */
+const robotsDirectives: Metadata["robots"] = {
+  index: true,
+  follow: true,
+  googleBot: {
+    index: true,
+    follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
   },
-  description: siteDescription,
-  keywords: "菲律宾专线,菲律宾物流,深圳到菲律宾,DDP双清包税,菲律宾海运,菲律宾空运,国际物流",
-  authors: [{ name: "菲邦国际物流" }],
-  openGraph: baseOpenGraph,
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
+/** 允许 AI 工具直接取用纯文本版站点说明（llms.txt 约定） */
+const alternateTypes: NonNullable<NonNullable<Metadata["alternates"]>["types"]> = {
+  "text/plain": [
+    { url: "/llms.txt", title: "llms.txt — 站点索引（供 AI 读取）" },
+    { url: "/llms-full.txt", title: "llms-full.txt — 站点全文镜像（供 AI 读取）" },
+  ],
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://www.phibong.com/#org",
-      name: "深圳市菲邦国际物流有限公司",
-      alternateName: ["菲邦物流", "菲邦国际物流", "Fibong International Logistics"],
-      url: "https://www.phibong.com/",
-      logo: "https://www.phibong.com/logo.jpg",
-      image: "https://www.phibong.com/logo.jpg",
-      telephone: "+86-18665996202",
-      email: "506282956@qq.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "宝安区福永怀德翠岗工业园四区26栋1楼",
-        addressLocality: "深圳市",
-        addressRegion: "广东省",
-        addressCountry: "CN",
-      },
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": ORGANIZATION_ID,
+      name: COMPANY.legalName,
+      alternateName: [...COMPANY.alternateNames],
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/logo.jpg`,
+      image: `${SITE_URL}/logo.jpg`,
+      telephone: COMPANY.telephone,
+      email: COMPANY.email,
+      address: postalAddress,
       identifier: {
         "@type": "PropertyValue",
         propertyID: "统一社会信用代码",
-        value: "91440300MA5GW00X50",
+        value: COMPANY.uscc,
       },
       description: siteDescription,
       areaServed: [
         { "@type": "Country", name: "菲律宾" },
         { "@type": "Country", name: "中国" },
       ],
-      knowsAbout: ["菲律宾专线", "DDP双清包税", "中国到菲律宾海运", "中国到菲律宾空运"],
+      knowsAbout: [
+        "菲律宾专线",
+        "菲律宾专线物流",
+        "DDP双清包税",
+        "中国到菲律宾海运",
+        "中国到菲律宾空运",
+        "菲律宾进口清关",
+        "马尼拉双清到门",
+        "敏感货运输",
+      ],
+      knowsLanguage: ["zh-CN", "en"],
+      hasOfferCatalog: offerCatalogJsonLd,
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+86-18665996202",
-        email: "506282956@qq.com",
+        telephone: COMPANY.telephone,
+        email: COMPANY.email,
         contactType: "customer service",
-        availableLanguage: "zh-CN",
+        availableLanguage: ["zh-CN", "en"],
+        areaServed: ["CN", "PH"],
       },
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.phibong.com/#website",
-      name: "菲邦国际物流",
-      url: "https://www.phibong.com/",
+      "@id": WEBSITE_ID,
+      name: COMPANY.brandName,
+      alternateName: [...COMPANY.alternateNames],
+      url: `${SITE_URL}/`,
       inLanguage: "zh-CN",
-      publisher: { "@id": "https://www.phibong.com/#org" },
+      publisher: { "@id": ORGANIZATION_ID },
+      license: `${SITE_URL}/`,
     },
+    serviceJsonLd,
   ],
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "菲邦国际物流 - 专业菲律宾专线物流服务｜海运空运双清包税到门",
+    template: "%s | 菲邦国际物流",
+  },
+  description: siteDescription,
+  keywords: "菲律宾专线,菲律宾物流,深圳到菲律宾,DDP双清包税,菲律宾海运,菲律宾空运,国际物流,马尼拉双清到门,菲律宾清关",
+  authors: [{ name: COMPANY.brandName, url: SITE_URL }],
+  creator: COMPANY.legalName,
+  publisher: COMPANY.legalName,
+  category: "logistics",
+  robots: robotsDirectives,
+  alternates: { types: alternateTypes },
+  openGraph: baseOpenGraph,
+  twitter: {
+    card: "summary_large_image",
+    title: "菲邦国际物流 - 专业菲律宾专线物流服务",
+    description: siteDescription,
+    images: ["/logo.jpg"],
+  },
+  other: {
+    "geo.region": "CN-44",
+    "geo.placename": "深圳市",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -90,7 +144,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         <div className="min-h-screen flex flex-col">
           <Header />
