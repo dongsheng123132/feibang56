@@ -90,7 +90,7 @@ export default function Pricing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-lg font-semibold">
-              🎉 限时特惠：海运马尼拉小件650元/方起（原价700）| 空运马尼拉包派50公斤起24元/kg | 立即咨询享受优惠价格！
+              🎉 海运小件限时特惠：普货650元/方起（原价700）| 空运 11 月运价：马尼拉包派 50 公斤起 24 元/kg
             </p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function Pricing() {
               </h2>
             </div>
             <p className="text-xl text-gray-600">
-              时效3-5天，马尼拉包派，50公斤起运；月促销价，原价 100 公斤起 22.5 元/kg
+              时效3-5天，马尼拉包派，50 公斤起运；11 月运价如下
             </p>
           </div>
 
@@ -127,7 +127,7 @@ export default function Pricing() {
                     <span className="font-semibold text-gray-900">50公斤起</span>
                     <span className="text-2xl font-bold text-red-600">24元/kg</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">本月促销价格</p>
+                  <p className="text-sm text-gray-600 mt-1">11 月运价</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-green-400">

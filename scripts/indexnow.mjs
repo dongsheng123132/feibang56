@@ -9,7 +9,7 @@
  *
  * 前提：public/<key>.txt 已随站点部署，且内容等于文件名里的 key。
  */
-import { readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -32,9 +32,13 @@ if (keyContent !== key) {
 
 let urls = process.argv.slice(2)
 if (urls.length === 0) {
-  const sitemap = readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8').includes('phibong')
-    ? path.join(ROOT, 'public', 'sitemap.xml')
-    : path.join(ROOT, 'out', 'sitemap.xml')
+  // sitemap 是 Next.js 构建产物，优先读 out/，兼容手工放置的情况
+  const candidates = [path.join(ROOT, 'out', 'sitemap.xml'), path.join(ROOT, 'public', 'sitemap.xml')]
+  const sitemap = candidates.find((file) => existsSync(file))
+  if (!sitemap) {
+    console.error('✗ 找不到 sitemap.xml，先跑 npm run build')
+    process.exit(1)
+  }
   const xml = readFileSync(sitemap, 'utf8')
   urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
 }

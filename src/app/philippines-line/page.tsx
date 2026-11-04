@@ -224,12 +224,12 @@ export default function PhilippinesLine() {
                 <h2 className="text-3xl font-bold text-gray-900">马尼拉空运专线</h2>
               </div>
               <p className="text-lg text-gray-600 mb-6">
-                马尼拉空运专线，时效3天，本周促销价格，包派送服务，适合急件和中小批量货物。
+                马尼拉空运专线，时效3-5天，11 月运价，包派送服务，适合急件和中小批量货物。
               </p>
               
               <div className="space-y-4">
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-                  <h4 className="font-semibold text-yellow-800 mb-2">🎉 本周促销价格</h4>
+                  <h4 className="font-semibold text-yellow-800 mb-2">✈️ 11 月空运运价</h4>
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />

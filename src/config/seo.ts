@@ -39,7 +39,7 @@ export const SITE_CONTENT_UPDATED = '2026-11-04';
  * 结构化数据里带 unitCode 才能被 AI 正确解析成「每立方米 / 每公斤」。
  */
 export const PRICE_NOTE =
-  '以上为限时促销价，可能随时调整；实际运价需按货物重量/体积、品名、包装、起运地与菲律宾收货地址、时效要求核算，以客服确认为准。';
+  '海运为限时促销价（原价见对照），空运为 11 月运价；运价可能随时调整。实际运价需按货物重量/体积、品名、包装、起运地与菲律宾收货地址、时效要求核算，以客服确认为准。';
 
 export const SERVICE_PRICES = [
   {
@@ -79,18 +79,18 @@ export const SERVICE_PRICES = [
     currency: 'CNY',
     unitCode: 'KGM',
     unitText: '元/公斤',
-    promo: true,
-    description: '马尼拉包派，双清包税到门，约 3-5 天。月促销价：普货 50 公斤起 24 元/公斤。',
+    promo: false,
+    description: '马尼拉包派，双清包税到门，约 3-5 天。11 月运价：普货 50 公斤起 24 元/公斤，起运量 50 公斤起。',
   },
   {
     name: '马尼拉空运（100 公斤起，普货）',
     price: 23,
-    originalPrice: 22.5,
+    originalPrice: null,
     currency: 'CNY',
     unitCode: 'KGM',
     unitText: '元/公斤',
-    promo: true,
-    description: '马尼拉包派，双清包税到门，约 3-5 天。月促销价：普货 100 公斤起 23 元/公斤。',
+    promo: false,
+    description: '马尼拉包派，双清包税到门，约 3-5 天。11 月运价：普货 100 公斤起 23 元/公斤。',
   },
   {
     name: '马尼拉空运（300 公斤起，普货）',
@@ -99,8 +99,8 @@ export const SERVICE_PRICES = [
     currency: 'CNY',
     unitCode: 'KGM',
     unitText: '元/公斤',
-    promo: true,
-    description: '马尼拉包派，双清包税到门，约 3-5 天。月促销价：普货 300 公斤起 22.5 元/公斤。',
+    promo: false,
+    description: '马尼拉包派，双清包税到门，约 3-5 天。11 月运价：普货 300 公斤起 22.5 元/公斤。',
   },
   {
     name: '马尼拉空运（敏感货，100 公斤起）',
