@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Ship, Plane, Clock, Shield, CheckCircle, Phone, Calculator, Truck, Package, Globe } from 'lucide-react'
-import { baseOpenGraph } from '@/config/seo'
+import { baseOpenGraph, SITE_URL, WEBSITE_ID, serviceJsonLd } from '@/config/seo'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
@@ -16,10 +16,44 @@ export const metadata: Metadata = {
   },
 }
 
+// 本页可见内容对应的结构化数据：服务（含报价目录）+ 页面主体 + 四步发货流程。
+// 四步与页面「服务流程」区块文案一致，不做「页面没有的内容」的结构化标注。
+const pageJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    serviceJsonLd,
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/philippines-line/`,
+      url: `${SITE_URL}/philippines-line/`,
+      name: '菲律宾专线：海运空运 DDP 双清包税到门',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@id': WEBSITE_ID },
+      about: { '@id': `${SITE_URL}/philippines-line/#service` },
+      primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE_URL}/logo.jpg` },
+    },
+    {
+      '@type': 'HowTo',
+      name: '菲律宾专线发货流程',
+      description: '从咨询报价到派送到门的四步发货流程',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: '咨询报价', text: '联系客服获取专属报价方案', url: `${SITE_URL}/contact/` },
+        { '@type': 'HowToStep', position: 2, name: '送货入仓', text: '将货物送至深圳机场仓库' },
+        { '@type': 'HowToStep', position: 3, name: '清关运输', text: '由菲邦负责清关和运输全流程' },
+        { '@type': 'HowToStep', position: 4, name: '派送到门', text: '货物安全送达马尼拉指定地址' },
+      ],
+    },
+  ],
+}
+
 export default function PhilippinesLine() {
   return (
     <div className="min-h-screen">
       <BreadcrumbJsonLd items={[{ name: '菲律宾专线', path: '/philippines-line/' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

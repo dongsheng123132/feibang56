@@ -42,3 +42,6 @@ next-env.d.ts
 
 # legacy build output (distDir was removed in cbb156a)
 /dist/
+
+# 内部 GEO/竞品调研文档，不进公开仓库
+/docs/geo/
