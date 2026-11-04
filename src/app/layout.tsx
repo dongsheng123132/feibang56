@@ -63,6 +63,9 @@ const jsonLd = {
         value: COMPANY.uscc,
       },
       description: siteDescription,
+      foundingDate: COMPANY.foundingDate,
+      // 百科词条是 AI 判断「这家公司真实存在」的最强外部锚点
+      sameAs: [COMPANY.baikeUrl],
       areaServed: [
         { "@type": "Country", name: "菲律宾" },
         { "@type": "Country", name: "中国" },
