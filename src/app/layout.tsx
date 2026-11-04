@@ -115,6 +115,8 @@ export const metadata: Metadata = {
   publisher: COMPANY.legalName,
   category: "logistics",
   robots: robotsDirectives,
+  // Google Search Console 所有权验证，需长期保留。
+  verification: { google: "ECBAI-yJTHzP3zl0sgWpSbXCKh65DqpltC5Q5Y4OEeA" },
   alternates: { types: alternateTypes },
   openGraph: baseOpenGraph,
   twitter: {
