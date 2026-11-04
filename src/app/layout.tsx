@@ -126,6 +126,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "CN-44",
     "geo.placename": "深圳市",
+    // 百度搜索资源平台站点归属验证（HTML 标签方式；文件方式在静态导出 + Vercel 下会被路由吞掉）
+    "baidu-site-verification": "codeva-RNxUDUGeVv",
   },
 };
 
