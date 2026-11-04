@@ -53,7 +53,7 @@ export default function AboutPage() {
     {
       icon: '🌏',
       title: '专业专线',
-      description: '专注菲律宾物流15年，深度了解当地市场和政策'
+      description: '团队深耕菲律宾物流 15 年，深度了解当地市场和政策'
     },
     {
       icon: '📦',
@@ -116,7 +116,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">关于菲邦物流</h1>
-          <p className="text-2xl mb-8">中菲物流专家 · 一手庄家 · 15年专业经验</p>
+          <p className="text-2xl mb-8">中菲物流专家 · 一手庄家 · 团队深耕菲律宾专线 15 年</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/10 rounded-lg p-6">
               <div className="text-3xl font-bold">15+</div>
@@ -146,7 +146,7 @@ export default function AboutPage() {
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
               菲邦物流成立于2009年，是一家专注于中国到菲律宾物流服务的专业公司。
               作为一手庄家，我们直接与船公司、航空公司合作，为客户提供最优惠的价格和最专业的服务。
-              15年来，我们始终坚持"客户至上，服务第一"的经营理念，
+              团队深耕菲律宾物流 15 年来，我们始终坚持"客户至上，服务第一"的经营理念，
               为超过500家企业提供了安全、快捷、经济的物流解决方案。
             </p>
             <div className="bg-blue-50 rounded-xl p-8">
@@ -255,7 +255,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8">选择菲邦，选择专业</h2>
           <p className="text-xl mb-12">
-            15年专业经验，一手庄家优势，为您提供最优质的中菲物流服务
+            团队深耕菲律宾专线 15 年，一手庄家优势，为您提供中菲物流服务
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a

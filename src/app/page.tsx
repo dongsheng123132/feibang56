@@ -47,7 +47,7 @@ export default function Home() {
             <div>
               <div className="mb-6">
                 <span className="inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                  🏆 一手庄家 · 15年专业经验
+                  🏆 一手庄家 · 团队深耕菲律宾专线 15 年
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -77,7 +77,7 @@ export default function Home() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                   <div className="text-2xl font-bold text-yellow-400 mb-1">15+</div>
-                  <div className="text-xs text-blue-100">年专业经验</div>
+                  <div className="text-xs text-blue-100">团队专线经验</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                   <div className="text-2xl font-bold text-yellow-400 mb-1">1000+</div>
@@ -133,7 +133,7 @@ export default function Home() {
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">一手庄家直营服务</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              15年深耕菲律宾市场，直接对接本土资源，为您提供最具竞争力的物流解决方案
+              团队深耕菲律宾市场 15 年，直接对接本土资源，为您提供最具竞争力的物流解决方案
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
