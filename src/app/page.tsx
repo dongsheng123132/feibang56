@@ -144,7 +144,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4 text-gray-900">海运专线</h3>
               <p className="text-gray-700 mb-4">直接对接菲律宾港口资源，海运价格比市场低30%</p>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />15-20天稳定时效</li>
+                <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />14-16天稳定时效</li>
                 <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />DDP双清包税到门</li>
                 <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />全程跟踪服务</li>
               </ul>
