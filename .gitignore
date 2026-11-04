@@ -45,3 +45,6 @@ next-env.d.ts
 
 # 内部 GEO/竞品调研文档，不进公开仓库
 /docs/geo/
+
+# 百度搜索资源平台准入密钥，不进公开仓库
+.baidu-token

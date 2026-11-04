@@ -9,7 +9,8 @@
     "lint": "next lint",
     "compress": "node scripts/compress-images.js",
     "gen:llms": "node --no-warnings scripts/gen-llms.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "baidu:push": "node scripts/baidu-push.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.544.0",
