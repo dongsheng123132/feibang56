@@ -28,13 +28,13 @@ export default function Home() {
       <div className="bg-gradient-to-r from-red-600 to-orange-500 text-white py-3 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap">
           <span className="text-lg font-bold mx-8">
-            🔥 本周特惠：海运马尼拉700元/立方米起 | 空运马尼拉22.5元/公斤起 | 双清包税到门 | 15天海运 | 3天空运 🔥
+            🔥 限时特惠：海运马尼拉小件650元/立方米起（原价700）| 空运马尼拉包派50公斤起24元/公斤 | 双清包税到门 | 海运14-16天 | 空运3-5天 🔥
           </span>
           <span className="text-lg font-bold mx-8">
-            🚢 海运优势：普货700/立方 | 敏感货800/立方 | 特货900/立方 | 全程15天 | 双清包税 🚢
+            🚢 海运小件特惠：普货650/立方 | 敏感货750/立方 | 特货850/立方（原价700/800/900）| 双清包税 🚢
           </span>
           <span className="text-lg font-bold mx-8">
-            ✈️ 空运优势：100公斤+仅22.5元/公斤 | 500公斤+仅22元/公斤 | 1吨+仅21.5元/公斤 | 3天到达 ✈️
+            ✈️ 空运月促销：50公斤起24元/公斤 | 100公斤起23元/公斤 | 300公斤起22.5元/公斤 | 马尼拉包派 ✈️
           </span>
         </div>
       </div>
@@ -103,9 +103,9 @@ export default function Home() {
                         <Ship className="h-6 w-6 mr-3 text-yellow-400" />
                         <span className="font-semibold">马尼拉海运</span>
                       </div>
-                      <span className="text-yellow-400 font-bold">700元/方起</span>
+                      <span className="text-yellow-400 font-bold">650元/方起</span>
                     </div>
-                    <p className="text-sm text-blue-100 mt-2">全程15天，双清包税到门</p>
+                    <p className="text-sm text-blue-100 mt-2">海运14-16天，双清包税到门（原价700元/方）</p>
                   </div>
                   <div className="bg-white/20 rounded-lg p-4">
                     <div className="flex items-center justify-between">
@@ -113,9 +113,9 @@ export default function Home() {
                         <Plane className="h-6 w-6 mr-3 text-yellow-400" />
                         <span className="font-semibold">马尼拉空运</span>
                       </div>
-                      <span className="text-yellow-400 font-bold">22.5元/kg起</span>
+                      <span className="text-yellow-400 font-bold">24元/kg起</span>
                     </div>
-                    <p className="text-sm text-blue-100 mt-2">时效3天，100公斤起运</p>
+                    <p className="text-sm text-blue-100 mt-2">时效3-5天，50公斤起运（100公斤起23元/公斤）</p>
                   </div>
                 </div>
               </div>
@@ -198,11 +198,11 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center bg-red-100 rounded-lg p-3 border-2 border-red-300">
                     <span className="font-bold text-red-800">菲邦特惠价格</span>
-                    <span className="text-red-600 font-bold text-xl">700元/立方起</span>
+                    <span className="text-red-600 font-bold text-xl">650元/立方起</span>
                   </div>
                   <div className="text-center">
                     <span className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">
-                      节省200-500元/立方！
+                      节省250-550元/立方！
                     </span>
                   </div>
                 </div>
@@ -220,11 +220,11 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center bg-red-100 rounded-lg p-3 border-2 border-red-300">
                     <span className="font-bold text-red-800">菲邦特惠价格</span>
-                    <span className="text-red-600 font-bold text-xl">22.5元/公斤起</span>
+                    <span className="text-red-600 font-bold text-xl">24元/公斤起</span>
                   </div>
                   <div className="text-center">
                     <span className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">
-                      节省5.5-12.5元/公斤！
+                      节省4-11元/公斤！
                     </span>
                   </div>
                 </div>

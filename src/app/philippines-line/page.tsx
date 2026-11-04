@@ -144,21 +144,21 @@ export default function PhilippinesLine() {
                 <h2 className="text-3xl font-bold text-gray-900">马尼拉海运专线</h2>
               </div>
               <p className="text-lg text-gray-600 mb-6">
-                菲律宾双清包税到门海运服务，全程15天，价格优惠，适合大批量货物运输。
+                菲律宾双清包税到门海运服务，全程14-16天，含清关，适合中小批量货物运输。
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">普通货物：<strong className="text-blue-600">700元/方</strong></span>
+                  <span className="text-gray-700">普通货物：<strong className="text-blue-600">650元/方</strong>（原价700）</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">敏感货物：<strong className="text-blue-600">800元/方</strong></span>
+                  <span className="text-gray-700">敏感货物：<strong className="text-blue-600">750元/方</strong>（原价800）</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">特殊货物：<strong className="text-blue-600">900元/方</strong></span>
+                  <span className="text-gray-700">特殊货物：<strong className="text-blue-600">850元/方</strong>（原价900）</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
@@ -233,15 +233,15 @@ export default function PhilippinesLine() {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      <span className="text-gray-700">100公斤起：<strong className="text-red-600">22.5元/kg</strong></span>
+                      <span className="text-gray-700">50公斤起：<strong className="text-red-600">24元/kg</strong></span>
                     </div>
                     <div className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      <span className="text-gray-700">500公斤起：<strong className="text-red-600">22元/kg</strong></span>
+                      <span className="text-gray-700">100公斤起：<strong className="text-red-600">23元/kg</strong></span>
                     </div>
                     <div className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      <span className="text-gray-700">吨货价格：<strong className="text-red-600">21.5元/kg</strong></span>
+                      <span className="text-gray-700">300公斤起：<strong className="text-red-600">22.5元/kg</strong></span>
                     </div>
                   </div>
                 </div>

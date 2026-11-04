@@ -19,14 +19,15 @@ export const metadata: Metadata = {
 }
 
 // 价格数字均取自本页已显示的报价（空运按 kg 计，海运按立方米计）
+// 2026-11 限时促销价（原价见括号）；促销调整时同步 src/config/seo.ts 的 SERVICE_PRICES
 const pricingTiers: { name: string; price: number; unitText: string }[] = [
-  { name: '马尼拉空运 普通货物 100公斤起', price: 22.5, unitText: 'kg' },
-  { name: '马尼拉空运 普通货物 500公斤起', price: 22, unitText: 'kg' },
-  { name: '马尼拉空运 普通货物 吨货价格', price: 21.5, unitText: 'kg' },
+  { name: '马尼拉空运 普通货物 50公斤起（月促销）', price: 24, unitText: 'kg' },
+  { name: '马尼拉空运 普通货物 100公斤起（月促销）', price: 23, unitText: 'kg' },
+  { name: '马尼拉空运 普通货物 300公斤起（月促销）', price: 22.5, unitText: 'kg' },
   { name: '马尼拉空运 敏感货物 100公斤起', price: 31, unitText: 'kg' },
-  { name: '马尼拉海运 普通货物', price: 700, unitText: '立方米' },
-  { name: '马尼拉海运 敏感货物', price: 800, unitText: '立方米' },
-  { name: '马尼拉海运 特殊货物', price: 900, unitText: '立方米' },
+  { name: '马尼拉海运小件 普通货物（促销，原价700）', price: 650, unitText: '立方米' },
+  { name: '马尼拉海运小件 敏感货物（促销，原价800）', price: 750, unitText: '立方米' },
+  { name: '马尼拉海运小件 特殊货物（促销，原价900）', price: 850, unitText: '立方米' },
 ]
 
 const serviceJsonLd = {
@@ -89,7 +90,7 @@ export default function Pricing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-lg font-semibold">
-              🎉 本周特惠：马尼拉空运普货22.5元/kg起，海运700元/方起！立即咨询享受优惠价格！
+              🎉 限时特惠：海运马尼拉小件650元/方起（原价700）| 空运马尼拉包派50公斤起24元/kg | 立即咨询享受优惠价格！
             </p>
           </div>
         </div>
@@ -108,7 +109,7 @@ export default function Pricing() {
               </h2>
             </div>
             <p className="text-xl text-gray-600">
-              时效3天，包派送服务，100公斤起运
+              时效3-5天，马尼拉包派，50公斤起运；月促销价，原价 100 公斤起 22.5 元/kg
             </p>
           </div>
 
@@ -123,24 +124,24 @@ export default function Pricing() {
               <div className="space-y-4">
                 <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-yellow-400">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-gray-900">100公斤起</span>
-                    <span className="text-2xl font-bold text-red-600">22.5元/kg</span>
+                    <span className="font-semibold text-gray-900">50公斤起</span>
+                    <span className="text-2xl font-bold text-red-600">24元/kg</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">本周促销价格</p>
+                  <p className="text-sm text-gray-600 mt-1">本月促销价格</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-green-400">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-gray-900">500公斤起</span>
-                    <span className="text-2xl font-bold text-red-600">22元/kg</span>
+                    <span className="font-semibold text-gray-900">100公斤起</span>
+                    <span className="text-2xl font-bold text-red-600">23元/kg</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">批量优惠价格</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-purple-400">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-gray-900">吨货价格</span>
-                    <span className="text-2xl font-bold text-red-600">21.5元/kg</span>
+                    <span className="font-semibold text-gray-900">300公斤起</span>
+                    <span className="text-2xl font-bold text-red-600">22.5元/kg</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">大批量最优价格</p>
                 </div>
@@ -149,7 +150,7 @@ export default function Pricing() {
               <div className="mt-6 pt-6 border-t border-blue-200">
                 <div className="flex items-center text-sm text-blue-700">
                   <Clock className="h-4 w-4 mr-2" />
-                  <span>时效：3天到达马尼拉</span>
+                  <span>时效：3-5 天到达马尼拉（含清关）</span>
                 </div>
                 <div className="flex items-center text-sm text-blue-700 mt-2">
                   <Truck className="h-4 w-4 mr-2" />
@@ -213,7 +214,7 @@ export default function Pricing() {
               </h2>
             </div>
             <p className="text-xl text-gray-600">
-              时效15天，双清包税到门，按立方计费
+              双清包税到门，按立方计费；下表为限时促销价，原价 700/800/900 元/立方米，以客服确认为准
             </p>
           </div>
 
@@ -222,8 +223,8 @@ export default function Pricing() {
             <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-blue-500">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">普通货物</h3>
-                <div className="text-3xl font-bold text-blue-600 mb-1">700元</div>
-                <div className="text-gray-600">每立方米</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">650元</div>
+                <div className="text-gray-600">每立方米 · 限时促销（原价 700 元）</div>
               </div>
               
               <ul className="space-y-3 mb-6">
@@ -263,8 +264,8 @@ export default function Pricing() {
               
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">敏感货物</h3>
-                <div className="text-3xl font-bold text-orange-600 mb-1">800元</div>
-                <div className="text-gray-600">每立方米</div>
+                <div className="text-3xl font-bold text-orange-600 mb-1">750元</div>
+                <div className="text-gray-600">每立方米 · 限时促销（原价 800 元）</div>
               </div>
               
               <ul className="space-y-3 mb-6">
@@ -298,8 +299,8 @@ export default function Pricing() {
             <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-purple-500">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">特殊货物</h3>
-                <div className="text-3xl font-bold text-purple-600 mb-1">900元</div>
-                <div className="text-gray-600">每立方米</div>
+                <div className="text-3xl font-bold text-purple-600 mb-1">850元</div>
+                <div className="text-gray-600">每立方米 · 限时促销（原价 900 元）</div>
               </div>
               
               <ul className="space-y-3 mb-6">

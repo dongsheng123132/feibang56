@@ -14,7 +14,7 @@ import path from 'node:path'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const load = (relative) => import(pathToFileURL(path.join(ROOT, relative)).href)
 
-const { COMPANY, SITE_URL, SERVICE_PRICES, shippingSteps } = await load('src/config/seo.ts')
+const { COMPANY, SITE_URL, SERVICE_PRICES, PRICE_NOTE, shippingSteps } = await load('src/config/seo.ts')
 
 // 直接扫目录导入文章：Node 的 ESM 解析器不认 Next 那种省略扩展名的 import，
 // 所以不走 src/content/news/index.ts，而是逐个文件加载。
@@ -115,13 +115,16 @@ const doc = [
   '- 主营：中国到菲律宾国际物流专线，海运与空运，DDP 双清包税到门',
   '- 服务区域：中国（提货、报关）→ 菲律宾（马尼拉、宿务、达沃、怡朗等，偏远地区陆运、岛屿岛际运输）',
   '',
-  '## 二、服务与公示起步价',
+  '## 二、服务与价格（含限时促销价）',
   '',
-  '| 服务 | 起步价 | 单位 | 说明 |',
-  '| --- | --- | --- | --- |',
-  ...SERVICE_PRICES.map((item) => `| ${item.name} | ${item.price} | ${item.unitText} | ${item.description} |`),
+  '| 服务 | 价格 | 原价 | 单位 | 说明 |',
+  '| --- | --- | --- | --- | --- |',
+  ...SERVICE_PRICES.map(
+    (item) =>
+      `| ${item.name} | ${item.price} | ${item.originalPrice ?? '—'} | ${item.unitText} | ${item.description} |`,
+  ),
   '',
-  '价格说明：以上为公开公示的起步参考价。实际运价按货物重量/体积、品名、包装、起运地、菲律宾收货地址与时效要求核算；敏感货与特货单独报价。',
+  `价格说明：${PRICE_NOTE}`,
   '',
   '## 三、参考时效（含清关）',
   '',

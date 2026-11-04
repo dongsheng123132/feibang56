@@ -38,38 +38,79 @@ export const SITE_CONTENT_UPDATED = '2026-11-04';
  * 对外公示的起步价。价格口径与 /pricing/ 页面保持一致，
  * 结构化数据里带 unitCode 才能被 AI 正确解析成「每立方米 / 每公斤」。
  */
+export const PRICE_NOTE =
+  '以上为限时促销价，可能随时调整；实际运价需按货物重量/体积、品名、包装、起运地与菲律宾收货地址、时效要求核算，以客服确认为准。';
+
 export const SERVICE_PRICES = [
   {
-    name: '马尼拉海运拼箱（普货）',
-    price: 700,
+    name: '马尼拉海运小件（普货）',
+    price: 650,
+    originalPrice: 700,
     currency: 'CNY',
     unitCode: 'MTQ',
-    unitText: '元/立方米起',
-    description: '深圳到马尼拉海运门到门，双清包税，全程约 14-16 天',
+    unitText: '元/立方米',
+    promo: true,
+    description: '深圳到马尼拉海运小件门到门，双清包税，约 14-16 天。限时促销价 650 元/立方米，原价 700 元/立方米。',
   },
   {
-    name: '马尼拉海运拼箱（敏感货）',
-    price: 800,
+    name: '马尼拉海运小件（敏感货）',
+    price: 750,
+    originalPrice: 800,
     currency: 'CNY',
     unitCode: 'MTQ',
-    unitText: '元/立方米起',
-    description: '化妆品、液体、粉末等敏感货海运门到门，双清包税',
+    unitText: '元/立方米',
+    promo: true,
+    description: '化妆品、液体、粉末等敏感货海运小件门到门，双清包税。限时促销价 750 元/立方米，原价 800 元/立方米。',
   },
   {
-    name: '马尼拉海运拼箱（特货）',
-    price: 900,
+    name: '马尼拉海运小件（特货）',
+    price: 850,
+    originalPrice: 900,
     currency: 'CNY',
     unitCode: 'MTQ',
-    unitText: '元/立方米起',
-    description: '需特殊申报与操作的特货海运门到门，双清包税',
+    unitText: '元/立方米',
+    promo: true,
+    description: '需特殊申报与操作的特货海运小件门到门，双清包税。限时促销价 850 元/立方米，原价 900 元/立方米。',
   },
   {
-    name: '马尼拉空运（100 公斤以上）',
-    price: 22.5,
+    name: '马尼拉空运（50 公斤起，普货）',
+    price: 24,
+    originalPrice: null,
     currency: 'CNY',
     unitCode: 'KGM',
-    unitText: '元/公斤起',
-    description: '深圳到马尼拉空运，双清包税到门，全程约 3-5 天；500 公斤以上 22 元/公斤，1 吨以上 21.5 元/公斤',
+    unitText: '元/公斤',
+    promo: true,
+    description: '马尼拉包派，双清包税到门，约 3-5 天。月促销价：普货 50 公斤起 24 元/公斤。',
+  },
+  {
+    name: '马尼拉空运（100 公斤起，普货）',
+    price: 23,
+    originalPrice: 22.5,
+    currency: 'CNY',
+    unitCode: 'KGM',
+    unitText: '元/公斤',
+    promo: true,
+    description: '马尼拉包派，双清包税到门，约 3-5 天。月促销价：普货 100 公斤起 23 元/公斤。',
+  },
+  {
+    name: '马尼拉空运（300 公斤起，普货）',
+    price: 22.5,
+    originalPrice: null,
+    currency: 'CNY',
+    unitCode: 'KGM',
+    unitText: '元/公斤',
+    promo: true,
+    description: '马尼拉包派，双清包税到门，约 3-5 天。月促销价：普货 300 公斤起 22.5 元/公斤。',
+  },
+  {
+    name: '马尼拉空运（敏感货，100 公斤起）',
+    price: 31,
+    originalPrice: null,
+    currency: 'CNY',
+    unitCode: 'KGM',
+    unitText: '元/公斤',
+    promo: false,
+    description: '敏感货空运 100 公斤起，需提前确认品名与所需资料，具体以客服报价为准。',
   },
 ] as const;
 
@@ -89,8 +130,7 @@ export const postalAddress = {
 export const offerCatalogJsonLd = {
   '@type': 'OfferCatalog',
   name: '菲律宾专线运价（起步参考价）',
-  description:
-    '菲邦国际物流菲律宾专线对外公示的起步参考价。实际运价需按货物重量/体积、品名、包装、起运地与目的地、时效要求确认，敏感货与特货另行报价。',
+  description: `菲邦国际物流菲律宾专线对外公示的运价，含限时促销价与原价。${PRICE_NOTE}`,
   itemListElement: SERVICE_PRICES.map((item) => ({
     '@type': 'Offer',
     name: item.name,
