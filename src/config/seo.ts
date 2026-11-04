@@ -25,7 +25,8 @@ export const COMPANY = {
   email: '506282956@qq.com',
   wechat: 'SGLYwjm',
   uscc: '91440300MA5GW00X50',
-  street: '宝安区福永怀德翠岗工业园四区26栋1楼',
+  // 以工商登记为准（26栋201）；1 楼为大件仓库收发货区，2 楼办公。
+  street: '宝安区福永街道怀德社区翠岗工业四区26栋201',
   locality: '深圳市',
   region: '广东省',
   country: 'CN',
@@ -145,6 +146,8 @@ export const offerCatalogJsonLd = {
       unitText: item.unitText,
     },
     availability: 'https://schema.org/InStock',
+    // 海运为月度促销，月底到期；空运是常价，不写有效期
+    ...(item.originalPrice ? { priceValidUntil: '2026-11-30' } : {}),
     seller: { '@id': ORGANIZATION_ID },
   })),
 };

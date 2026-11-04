@@ -114,7 +114,8 @@ export default function Contact() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">公司地址</h3>
               <p className="text-gray-600 mb-4">欢迎到访我们的办公室</p>
               <div className="text-gray-700 space-y-2 flex-grow flex flex-col justify-center">
-                <p className="font-semibold text-base">深圳市宝安区福永怀德翠岗工业园四区26栋1楼</p>
+                <p className="font-semibold text-base">深圳市宝安区福永街道怀德社区翠岗工业四区26栋201</p>
+                <p className="text-sm text-gray-600 mt-1">（26 栋整栋自用：1 楼大件仓库收发货，2 楼办公）</p>
                 <p className="text-sm text-gray-600">菲律宾专线机场仓</p>
                 <p className="text-sm text-gray-600">营业时间：周一至周六 9:00-18:00</p>
                 <p className="text-sm text-gray-600">节假日请提前预约</p>

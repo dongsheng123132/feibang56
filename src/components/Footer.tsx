@@ -62,7 +62,7 @@ export default function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300 leading-relaxed">
-                  <p className="font-medium">深圳市宝安区福永怀德翠岗工业园四区26栋1楼</p>
+                  <p className="font-medium">深圳市宝安区福永街道怀德社区翠岗工业四区26栋201</p>
                   <p className="text-xs text-gray-400 mt-1">菲律宾专线机场仓</p>
                   <p className="text-xs text-gray-400 mt-1">营业时间：周一至周六 9:00-18:00</p>
                 </div>
