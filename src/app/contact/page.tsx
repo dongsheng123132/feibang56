@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Send, User, Package } from '
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import { OSS_IMAGES } from '@/config/oss'
-import { baseOpenGraph } from '@/config/seo'
+import { baseOpenGraph, alternateTypes } from '@/config/seo'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description: '专业的菲律宾物流服务团队，随时为您提供咨询和报价服务',
   alternates: {
     canonical: '/contact/',
+    types: alternateTypes,
   },
   openGraph: {
     ...baseOpenGraph,

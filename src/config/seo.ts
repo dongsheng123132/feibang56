@@ -192,3 +192,15 @@ export const shippingSteps = [
   { name: '菲律宾进口清关与缴税', text: '代办菲律宾进口清关，代缴进口关税与税费（DDP 的核心差异在此）。' },
   { name: '派送到门并签收', text: '马尼拉及周边直接派送；其他城市安排陆运，岛屿地区安排岛际运输。' },
 ] as const;
+
+/**
+ * 供 AI 读取的纯文本/订阅入口。必须挂到每个页面的 alternates 上——
+ * 页面级 alternates 会整体覆盖 layout 的同名字段，只在 layout 里写会全部丢失。
+ */
+export const alternateTypes: NonNullable<NonNullable<Metadata['alternates']>['types']> = {
+  'text/plain': [
+    { url: '/llms.txt', title: 'llms.txt — 站点索引（供 AI 读取）' },
+    { url: '/llms-full.txt', title: 'llms-full.txt — 站点全文镜像（供 AI 读取）' },
+  ],
+  'application/rss+xml': [{ url: '/feed.xml', title: '菲邦国际物流 — 菲律宾物流知识库 RSS' }],
+};

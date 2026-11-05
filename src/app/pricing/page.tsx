@@ -3,7 +3,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { Calculator, Ship, Plane, Truck, Package, Clock, Shield, CheckCircle, Phone, Mail, MessageCircle } from 'lucide-react'
 import { OSS_IMAGES } from '@/config/oss'
-import { baseOpenGraph } from '@/config/seo'
+import { baseOpenGraph, alternateTypes } from '@/config/seo'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: '透明价格，优质服务，马尼拉双清包税到门专线，海运空运双渠道满足您的不同需求',
   alternates: {
     canonical: '/pricing/',
+    types: alternateTypes,
   },
   openGraph: {
     ...baseOpenGraph,

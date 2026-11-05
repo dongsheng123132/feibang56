@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Calendar, Clock, Phone, ArrowRight, CheckCircle, Tag } from 'lucide-react'
-import { COMPANY, SITE_URL } from '@/config/seo'
+import { COMPANY, SITE_URL, alternateTypes } from '@/config/seo'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import { getArticle, newsArticles, relatedArticles } from '@/content/news'
 
@@ -45,6 +45,7 @@ export async function generateMetadata({
     authors: [{ name: COMPANY.brandName, url: SITE_URL }],
     alternates: {
       canonical: `/news/${article.slug}/`,
+    types: alternateTypes,
     },
     openGraph: {
       type: 'article',

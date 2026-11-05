@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { baseOpenGraph } from '@/config/seo'
+import { baseOpenGraph, alternateTypes } from '@/config/seo'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: '货物跟踪',
   alternates: {
     canonical: '/tracking/',
+    types: alternateTypes,
   },
   openGraph: {
     ...baseOpenGraph,

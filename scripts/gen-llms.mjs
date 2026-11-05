@@ -198,7 +198,8 @@ const faq = {
   site: SITE_URL,
   name: COMPANY.legalName,
   updated: today,
-  items: newsArticles.flatMap((article) =>
+  // 顶层必须是 faqs 数组（geo-checklist 约定），否则 AI 发现端点判定为无效
+  faqs: newsArticles.flatMap((article) =>
     article.faqs.map((item) => ({
       question: item.question,
       answer: item.answer,
@@ -210,6 +211,16 @@ writeFileSync(path.join(ROOT, 'public/ai/faq.json'), JSON.stringify(faq, null, 2
 
 const service = {
   site: SITE_URL,
+  // 顶层 name + capabilities 为 geo-checklist 约定字段
+  name: '中国到菲律宾国际物流专线（DDP 双清包税到门）',
+  capabilities: [
+    '中国到菲律宾海运专线（双清包税到门，约 14-16 天）',
+    '中国到菲律宾空运专线（马尼拉包派，约 3-5 天）',
+    'DDP 双清包税：代办出口报关、菲律宾进口清关、代缴关税与税费',
+    '菲律宾全境派送：马尼拉、宿务、达沃、怡朗，偏远地区陆运、岛屿岛际运输',
+    '敏感货与特货专线（化妆品、带电、食品、液体粉末等）',
+    '入库代收、称重量方、货物跟踪与报价服务',
+  ],
   provider: { name: COMPANY.legalName, url: `${SITE_URL}/`, telephone: COMPANY.telephoneDisplay },
   service: {
     name: '中国到菲律宾国际物流专线（DDP 双清包税到门）',

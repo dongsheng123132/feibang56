@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Calendar, Phone, ArrowRight, BookOpen } from 'lucide-react'
-import { baseOpenGraph, COMPANY } from '@/config/seo'
+import { baseOpenGraph, COMPANY, alternateTypes } from '@/config/seo'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import { newsArticles } from '@/content/news'
 
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description: LIST_DESCRIPTION,
   alternates: {
     canonical: '/news/',
+    types: alternateTypes,
   },
   openGraph: {
     ...baseOpenGraph,
