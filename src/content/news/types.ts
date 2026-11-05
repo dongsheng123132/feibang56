@@ -49,4 +49,6 @@ export type NewsArticle = {
   faqs: NewsFaq[];
   /** 本文覆盖的关键词，用于相关推荐与 llms.txt */
   relatedKeywords: string[];
+  /** 权威参考来源（官方站点），渲染在文末并写入 Article.citation */
+  sources?: { label: string; url: string }[];
 };

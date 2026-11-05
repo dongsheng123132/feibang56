@@ -97,6 +97,10 @@ const article: NewsArticle = {
     '菲律宾物流公司',
     '马尼拉专线价格',
   ],
+  sources: [
+    { label: '中华人民共和国商务部 — 国际货运代理行业管理', url: 'https://www.mofcom.gov.cn/' },
+    { label: '菲律宾海关局（Bureau of Customs）官网', url: 'https://customs.gov.ph/' },
+  ],
 };
 
 export default article;

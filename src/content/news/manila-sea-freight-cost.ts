@@ -115,6 +115,10 @@ const article: NewsArticle = {
     '菲律宾海运双清包税',
     '海运体积重怎么算',
   ],
+  sources: [
+    { label: '菲律宾海关局（Bureau of Customs）官网', url: 'https://customs.gov.ph/' },
+    { label: '菲律宾国税局（BIR）官网', url: 'https://www.bir.gov.ph/' },
+  ],
 };
 
 export default article;

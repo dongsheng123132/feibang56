@@ -93,6 +93,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
         keywords: article.relatedKeywords.join(', '),
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${SITE_URL}/philippines-line/#service` },
+        ...(article.sources?.length ? { citation: article.sources.map((s) => s.url) } : {}),
       },
       {
         '@type': 'FAQPage',
@@ -250,6 +251,30 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
               </Link>
             </div>
           </section>
+
+          {article.sources && article.sources.length > 0 && (
+            <section className="mt-10 bg-gray-50 rounded-xl p-6">
+              <h2 className="text-lg font-bold text-gray-900 mb-3">参考来源</h2>
+              <ul className="space-y-2">
+                {article.sources.map((source) => (
+                  <li key={source.url} className="text-gray-700 leading-relaxed">
+                    <span className="mr-2 text-gray-400">·</span>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+                    >
+                      {source.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-gray-500 mt-3">
+                以上为本文所涉规则与政策的官方发布渠道，具体以菲律宾主管部门最新公告为准。
+              </p>
+            </section>
+          )}
 
           {related.length > 0 && (
             <section className="mt-12">
