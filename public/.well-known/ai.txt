@@ -1,0 +1,70 @@
+# ai.txt — AI crawler & usage policy for www.phibong.com
+# Owner: 深圳市菲邦国际物流有限公司 (Shenzhen Fibang International Logistics Co., Ltd.)
+# Contact: 18665996202 / 506282956@qq.com
+# Updated: 2026-11-05
+
+User-Agent: *
+Allow: /
+
+# Search-tier AI crawlers: allowed (we want to be cited in AI answers)
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: Claude-User
+Allow: /
+
+User-Agent: Applebot
+Allow: /
+
+User-Agent: Googlebot
+Allow: /
+
+# Training-tier crawlers: allowed (no restriction on model training)
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+# Chinese search / AI ecosystem
+User-Agent: Baiduspider
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
+User-Agent: Sogou web spider
+Allow: /
+
+User-Agent: YisouSpider
+Allow: /
+
+User-Agent: PetalBot
+Allow: /
+
+User-Agent: 360Spider
+Allow: /
+
+# Machine-readable resources
+# llms.txt:        https://www.phibong.com/llms.txt
+# llms-full.txt:   https://www.phibong.com/llms-full.txt
+# summary.json:    https://www.phibong.com/ai/summary.json
+# faq.json:        https://www.phibong.com/ai/faq.json
+# service.json:    https://www.phibong.com/ai/service.json
+# sitemap:         https://www.phibong.com/sitemap.xml
+# rss:             https://www.phibong.com/feed.xml
+
+# Citation policy: content may be indexed and cited. When citing, attribute to
+# 深圳市菲邦国际物流有限公司, https://www.phibong.com

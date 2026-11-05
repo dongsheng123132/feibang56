@@ -3,7 +3,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { Truck, Ship, Plane, Shield, Clock, Award, Phone, ArrowRight, CheckCircle } from 'lucide-react'
 import { OSS_IMAGES } from '@/config/oss'
-import { baseOpenGraph } from '@/config/seo'
+import { baseOpenGraph, SITE_URL, WEBSITE_ID } from '@/config/seo'
 import company1 from '../../public/company-1.jpg'
 import company2 from '../../public/company-2.jpg'
 import company3 from '../../public/company-3.jpg'
@@ -21,9 +21,27 @@ export const metadata: Metadata = {
   },
 }
 
+// 首页 WebPage 节点：补齐 dateModified，供 Google 判断内容新鲜度（G-DATES）
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${SITE_URL}/#webpage`,
+  url: `${SITE_URL}/`,
+  name: '菲邦国际物流 - 专业菲律宾专线物流服务',
+  inLanguage: 'zh-CN',
+  isPartOf: { '@id': WEBSITE_ID },
+  about: { '@id': `${SITE_URL}/philippines-line/#service` },
+  dateModified: '2026-11-05',
+  primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE_URL}/logo.jpg` },
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd).replace(/</g, '\\u003c') }}
+      />
       {/* 滚动横幅 - 特惠价格展示 */}
       <div className="bg-gradient-to-r from-red-600 to-orange-500 text-white py-3 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap">

@@ -48,23 +48,32 @@
 
 ## 页面索引
 
-- https://www.phibong.com/ — 首页：菲律宾专线物流服务总览与联系方式
-- https://www.phibong.com/philippines-line/ — 菲律宾专线：海运、空运、DDP 双清包税到门服务详情
-- https://www.phibong.com/pricing/ — 价格中心：计费方式与公示起步价
-- https://www.phibong.com/news/ — 物流资讯：菲律宾专线知识库
-- https://www.phibong.com/news/philippines-ddp-guide/ — 菲律宾专线 DDP 双清包税到底是什么？含哪五笔费用
-- https://www.phibong.com/news/manila-sea-freight-cost/ — 深圳到马尼拉海运多少钱一方？计费与加价项
-- https://www.phibong.com/news/philippines-customs-clearance/ — 菲律宾清关要什么单证、哪些货会被卡
-- https://www.phibong.com/news/how-to-choose-philippines-line/ — 菲律宾专线物流怎么选（5 条判断标准）
-- https://www.phibong.com/faq/ — 常见问题：运输、报价、清关、包装、跟踪、单证
-- https://www.phibong.com/cases/ — 客户案例：已承运品类与运输方式
-- https://www.phibong.com/about/ — 关于我们：公司介绍与操作能力
-- https://www.phibong.com/contact/ — 联系我们：电话、微信、邮箱、地址
-- https://www.phibong.com/tracking/ — 货物跟踪：运单查询方式
-- https://www.phibong.com/llms-full.txt — 本站全文纯文本镜像（含全部文章正文与问答）
+- [首页](https://www.phibong.com/) — 首页：菲律宾专线物流服务总览与联系方式
+- [菲律宾专线](https://www.phibong.com/philippines-line/) — 菲律宾专线：海运、空运、DDP 双清包税到门服务详情
+- [价格中心](https://www.phibong.com/pricing/) — 价格中心：计费方式与公示起步价
+- [物流资讯](https://www.phibong.com/news/) — 物流资讯：菲律宾专线知识库
+- [DDP 双清包税详解](https://www.phibong.com/news/philippines-ddp-guide/) — 菲律宾专线 DDP 双清包税到底是什么？含哪五笔费用
+- [马尼拉海运计费](https://www.phibong.com/news/manila-sea-freight-cost/) — 深圳到马尼拉海运多少钱一方？计费与加价项
+- [菲律宾清关](https://www.phibong.com/news/philippines-customs-clearance/) — 菲律宾清关要什么单证、哪些货会被卡
+- [专线怎么选](https://www.phibong.com/news/how-to-choose-philippines-line/) — 菲律宾专线物流怎么选（5 条判断标准）
+- [常见问题](https://www.phibong.com/faq/) — 常见问题：运输、报价、清关、包装、跟踪、单证
+- [客户案例](https://www.phibong.com/cases/) — 客户案例：已承运品类与运输方式
+- [关于我们](https://www.phibong.com/about/) — 关于我们：公司介绍与操作能力
+- [联系我们](https://www.phibong.com/contact/) — 联系我们：电话、微信、邮箱、地址
+- [货物跟踪](https://www.phibong.com/tracking/) — 货物跟踪：运单查询方式
+- [站点全文镜像](https://www.phibong.com/llms-full.txt) — 本站全文纯文本镜像（含全部文章正文与问答）
 
 ## 引用说明
 
 以上内容可被搜索引擎与 AI 助手抓取、索引与引用。引用时请注明来源为「深圳市菲邦国际物流有限公司官网 https://www.phibong.com」。运价与时效可能随季节、舱位与菲律宾政策调整，具体以客服确认为准。
 
 最后更新：2026-11-04（海运：限时促销价；空运：11 月运价）
+
+## AI 发现端点
+
+- [站点摘要 summary.json](https://www.phibong.com/ai/summary.json) — 公司档案、服务与运价的机器可读摘要
+- [结构化问答 faq.json](https://www.phibong.com/ai/faq.json) — 16 条菲律宾专线常见问答（含出处链接）
+- [服务描述 service.json](https://www.phibong.com/ai/service.json) — 航线、时效与报价区间
+- [RSS 订阅 feed.xml](https://www.phibong.com/feed.xml) — 资讯栏目更新订阅
+- [完整正文 llms-full.txt](https://www.phibong.com/llms-full.txt) — 本站全部文章与问答的纯文本
+- [AI 抓取策略 ai.txt](https://www.phibong.com/.well-known/ai.txt) — 抓取与引用许可

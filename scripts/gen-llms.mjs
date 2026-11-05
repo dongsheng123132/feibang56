@@ -154,6 +154,113 @@ const doc = [
 const target = path.join(ROOT, 'public/llms-full.txt')
 writeFileSync(target, doc, 'utf8')
 
+// ── 附带生成 AI discovery 端点与 RSS ──────────────────────────────
+const { mkdirSync } = await import('node:fs')
+mkdirSync(path.join(ROOT, 'public/ai'), { recursive: true })
+
+const SITE_NAME = COMPANY.brandName
+const SUMMARY = {
+  name: COMPANY.legalName,
+  brand: COMPANY.brandName,
+  alternateName: [...COMPANY.alternateNames],
+  url: SITE_URL,
+  description:
+    '深圳市菲邦国际物流有限公司专注中国到菲律宾专线物流，提供海运、空运 DDP 双清包税到门服务，覆盖马尼拉、宿务、达沃、怡朗及菲律宾全境。',
+  foundingDate: COMPANY.foundingDate,
+  telephone: COMPANY.telephoneDisplay,
+  email: COMPANY.email,
+  address: {
+    street: COMPANY.street,
+    locality: COMPANY.locality,
+    region: COMPANY.region,
+    country: COMPANY.country,
+  },
+  identifier: { type: '统一社会信用代码', value: COMPANY.uscc },
+  services: SERVICE_PRICES.map((item) => ({
+    name: item.name,
+    price: item.price,
+    currency: item.currency,
+    unit: item.unitText,
+    originalPrice: item.originalPrice,
+    note: item.description,
+  })),
+  pages: PAGES.map(([route, desc]) => ({ url: `${SITE_URL}${route}`, description: desc })),
+  about: `${SITE_URL}/about/`,
+  contact: `${SITE_URL}/contact/`,
+  sameAs: [COMPANY.baikeUrl],
+  llmsTxt: `${SITE_URL}/llms.txt`,
+  llmsFullTxt: `${SITE_URL}/llms-full.txt`,
+  updated: today,
+}
+writeFileSync(path.join(ROOT, 'public/ai/summary.json'), JSON.stringify(SUMMARY, null, 2), 'utf8')
+
+const faq = {
+  site: SITE_URL,
+  name: COMPANY.legalName,
+  updated: today,
+  items: newsArticles.flatMap((article) =>
+    article.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+      source: `${SITE_URL}/news/${article.slug}/`,
+    })),
+  ),
+}
+writeFileSync(path.join(ROOT, 'public/ai/faq.json'), JSON.stringify(faq, null, 2), 'utf8')
+
+const service = {
+  site: SITE_URL,
+  provider: { name: COMPANY.legalName, url: `${SITE_URL}/`, telephone: COMPANY.telephoneDisplay },
+  service: {
+    name: '中国到菲律宾国际物流专线（DDP 双清包税到门）',
+    description:
+      '从中国到菲律宾马尼拉、宿务、达沃、怡朗等城市的海运与空运专线，代办出口报关与菲律宾进口清关，代缴关税与税费，配送到收货地址。',
+    areaServed: ['菲律宾', '中国'],
+    leadTime: { sea: '14-16 天（含清关）', air: '3-5 天（含清关）', courier: '5-7 天' },
+    offers: SERVICE_PRICES.map((item) => ({
+      name: item.name,
+      price: item.price,
+      currency: item.currency,
+      unit: item.unitText,
+      originalPrice: item.originalPrice,
+    })),
+    more: `${SITE_URL}/philippines-line/`,
+  },
+  updated: today,
+}
+writeFileSync(path.join(ROOT, 'public/ai/service.json'), JSON.stringify(service, null, 2), 'utf8')
+
+const esc = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const rfc822 = (yyyy_mm_dd) => new Date(`${yyyy_mm_dd}T09:00:00+08:00`).toUTCString()
+const items = newsArticles
+  .map(
+    (article) => `    <item>
+      <title>${esc(article.title)}</title>
+      <link>${SITE_URL}/news/${article.slug}/</link>
+      <guid isPermaLink="true">${SITE_URL}/news/${article.slug}/</guid>
+      <description>${esc(article.description)}</description>
+      <pubDate>${rfc822(article.date)}</pubDate>
+${article.tags.map((tag) => `      <category>${esc(tag)}</category>`).join('\n')}
+    </item>`,
+  )
+  .join('\n')
+
+const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${esc(SITE_NAME)} — 菲律宾专线物流知识库</title>
+    <link>${SITE_URL}/news/</link>
+    <description>${esc('菲律宾专线物流知识：DDP 双清包税、马尼拉海运计费、菲律宾清关、专线货代选择。')}</description>
+    <language>zh-CN</language>
+    <lastBuildDate>${rfc822(newsArticles[0]?.date ?? today)}</lastBuildDate>
+    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+${items}
+  </channel>
+</rss>
+`
+writeFileSync(path.join(ROOT, 'public/feed.xml'), feed, 'utf8')
+console.log('已生成 public/ai/{summary,faq,service}.json 与 public/feed.xml')
+
 const stats = {
   bytes: Buffer.byteLength(doc, 'utf8'),
   articles: newsArticles.length,

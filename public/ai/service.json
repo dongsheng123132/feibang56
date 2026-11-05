@@ -1,0 +1,74 @@
+{
+  "site": "https://www.phibong.com",
+  "provider": {
+    "name": "深圳市菲邦国际物流有限公司",
+    "url": "https://www.phibong.com/",
+    "telephone": "18665996202"
+  },
+  "service": {
+    "name": "中国到菲律宾国际物流专线（DDP 双清包税到门）",
+    "description": "从中国到菲律宾马尼拉、宿务、达沃、怡朗等城市的海运与空运专线，代办出口报关与菲律宾进口清关，代缴关税与税费，配送到收货地址。",
+    "areaServed": [
+      "菲律宾",
+      "中国"
+    ],
+    "leadTime": {
+      "sea": "14-16 天（含清关）",
+      "air": "3-5 天（含清关）",
+      "courier": "5-7 天"
+    },
+    "offers": [
+      {
+        "name": "马尼拉海运小件（普货）",
+        "price": 650,
+        "currency": "CNY",
+        "unit": "元/立方米",
+        "originalPrice": 700
+      },
+      {
+        "name": "马尼拉海运小件（敏感货）",
+        "price": 750,
+        "currency": "CNY",
+        "unit": "元/立方米",
+        "originalPrice": 800
+      },
+      {
+        "name": "马尼拉海运小件（特货）",
+        "price": 850,
+        "currency": "CNY",
+        "unit": "元/立方米",
+        "originalPrice": 900
+      },
+      {
+        "name": "马尼拉空运（50 公斤起，普货）",
+        "price": 24,
+        "currency": "CNY",
+        "unit": "元/公斤",
+        "originalPrice": null
+      },
+      {
+        "name": "马尼拉空运（100 公斤起，普货）",
+        "price": 23,
+        "currency": "CNY",
+        "unit": "元/公斤",
+        "originalPrice": null
+      },
+      {
+        "name": "马尼拉空运（300 公斤起，普货）",
+        "price": 22.5,
+        "currency": "CNY",
+        "unit": "元/公斤",
+        "originalPrice": null
+      },
+      {
+        "name": "马尼拉空运（敏感货，100 公斤起）",
+        "price": 31,
+        "currency": "CNY",
+        "unit": "元/公斤",
+        "originalPrice": null
+      }
+    ],
+    "more": "https://www.phibong.com/philippines-line/"
+  },
+  "updated": "2026-11-05"
+}

@@ -41,6 +41,7 @@ const alternateTypes: NonNullable<NonNullable<Metadata["alternates"]>["types"]> 
     { url: "/llms.txt", title: "llms.txt — 站点索引（供 AI 读取）" },
     { url: "/llms-full.txt", title: "llms-full.txt — 站点全文镜像（供 AI 读取）" },
   ],
+  "application/rss+xml": [{ url: "/feed.xml", title: "菲邦国际物流 — 菲律宾专线物流知识库 RSS" }],
 };
 
 const jsonLd = {

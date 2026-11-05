@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>菲邦国际物流 — 菲律宾专线物流知识库</title>
+    <link>https://www.phibong.com/news/</link>
+    <description>菲律宾专线物流知识：DDP 双清包税、马尼拉海运计费、菲律宾清关、专线货代选择。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 04 Nov 2026 01:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.phibong.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>菲律宾专线 DDP 双清包税到底是什么？</title>
+      <link>https://www.phibong.com/news/philippines-ddp-guide/</link>
+      <guid isPermaLink="true">https://www.phibong.com/news/philippines-ddp-guide/</guid>
+      <description>DDP 和 DDU 的差别不在运价，而在谁去菲律宾海关清关、谁缴关税和增值税。本文拆开双清包税报价里的五笔费用，说明它和普通空派、海派的区别，以及没有进口资质、收货人是个人、货要送到宿务或达沃时为什么必须走 DDP。</description>
+      <pubDate>Wed, 04 Nov 2026 01:00:00 GMT</pubDate>
+      <category>菲律宾专线</category>
+      <category>DDP</category>
+      <category>双清包税</category>
+      <category>菲律宾清关</category>
+    </item>
+    <item>
+      <title>菲律宾清关要什么单证？哪些货会被卡？</title>
+      <link>https://www.phibong.com/news/philippines-customs-clearance/</link>
+      <guid isPermaLink="true">https://www.phibong.com/news/philippines-customs-clearance/</guid>
+      <description>清关卡住九成不是运气问题，而是单证、品名、货值三处对不上。本文列出发菲律宾要准备的单证清单，拆解六类常见卡关原因，说明化妆品、带电产品、食品怎么走，以及 DDP 下关税和增值税由谁承担。</description>
+      <pubDate>Wed, 04 Nov 2026 01:00:00 GMT</pubDate>
+      <category>菲律宾清关</category>
+      <category>清关单证</category>
+      <category>敏感货</category>
+      <category>菲律宾关税</category>
+    </item>
+    <item>
+      <title>深圳到马尼拉海运多少钱一方？650 元/方起怎么算</title>
+      <link>https://www.phibong.com/news/manila-sea-freight-cost/</link>
+      <guid isPermaLink="true">https://www.phibong.com/news/manila-sea-freight-cost/</guid>
+      <description>马尼拉海运小件限时促销 650 元/立方米起，敏感货 750、特货 850，原价分别是 700、800、900。本文用 1 方、3 方、5 方、10 方的算式说明促销价怎么算，讲清体积怎么量，以及超长超重、偏远地区、岛际运输会产生哪些加价。</description>
+      <pubDate>Wed, 04 Nov 2026 01:00:00 GMT</pubDate>
+      <category>马尼拉海运</category>
+      <category>海运价格</category>
+      <category>菲律宾专线</category>
+      <category>双清包税</category>
+    </item>
+    <item>
+      <title>菲律宾专线物流怎么选？5 条判断标准</title>
+      <link>https://www.phibong.com/news/how-to-choose-philippines-line/</link>
+      <guid isPermaLink="true">https://www.phibong.com/news/how-to-choose-philippines-line/</guid>
+      <description>低价报价单最容易藏三样东西：不含税、不含目的地费用、时效不含清关。本文给 5 条可以当面问、可以查证的判断标准，附 6 个常见踩坑场景，帮你在签合同前把菲律宾专线的真实成本和时间算清楚。</description>
+      <pubDate>Wed, 04 Nov 2026 01:00:00 GMT</pubDate>
+      <category>菲律宾专线</category>
+      <category>货代选择</category>
+      <category>双清包税</category>
+      <category>避坑</category>
+    </item>
+  </channel>
+</rss>

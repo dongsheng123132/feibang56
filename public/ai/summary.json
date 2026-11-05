@@ -1,0 +1,128 @@
+{
+  "name": "深圳市菲邦国际物流有限公司",
+  "brand": "菲邦国际物流",
+  "alternateName": [
+    "菲邦物流",
+    "菲邦国际物流",
+    "Fibong International Logistics"
+  ],
+  "url": "https://www.phibong.com",
+  "description": "深圳市菲邦国际物流有限公司专注中国到菲律宾专线物流，提供海运、空运 DDP 双清包税到门服务，覆盖马尼拉、宿务、达沃、怡朗及菲律宾全境。",
+  "foundingDate": "2021-07-02",
+  "telephone": "18665996202",
+  "email": "506282956@qq.com",
+  "address": {
+    "street": "宝安区福永街道怀德社区翠岗工业四区26栋201",
+    "locality": "深圳市",
+    "region": "广东省",
+    "country": "CN"
+  },
+  "identifier": {
+    "type": "统一社会信用代码",
+    "value": "91440300MA5GW00X50"
+  },
+  "services": [
+    {
+      "name": "马尼拉海运小件（普货）",
+      "price": 650,
+      "currency": "CNY",
+      "unit": "元/立方米",
+      "originalPrice": 700,
+      "note": "深圳到马尼拉海运小件门到门，双清包税，约 14-16 天。限时促销价 650 元/立方米，原价 700 元/立方米。"
+    },
+    {
+      "name": "马尼拉海运小件（敏感货）",
+      "price": 750,
+      "currency": "CNY",
+      "unit": "元/立方米",
+      "originalPrice": 800,
+      "note": "化妆品、液体、粉末等敏感货海运小件门到门，双清包税。限时促销价 750 元/立方米，原价 800 元/立方米。"
+    },
+    {
+      "name": "马尼拉海运小件（特货）",
+      "price": 850,
+      "currency": "CNY",
+      "unit": "元/立方米",
+      "originalPrice": 900,
+      "note": "需特殊申报与操作的特货海运小件门到门，双清包税。限时促销价 850 元/立方米，原价 900 元/立方米。"
+    },
+    {
+      "name": "马尼拉空运（50 公斤起，普货）",
+      "price": 24,
+      "currency": "CNY",
+      "unit": "元/公斤",
+      "originalPrice": null,
+      "note": "马尼拉包派，双清包税到门，约 3-5 天。11 月运价：普货 50 公斤起 24 元/公斤，起运量 50 公斤起。"
+    },
+    {
+      "name": "马尼拉空运（100 公斤起，普货）",
+      "price": 23,
+      "currency": "CNY",
+      "unit": "元/公斤",
+      "originalPrice": null,
+      "note": "马尼拉包派，双清包税到门，约 3-5 天。11 月运价：普货 100 公斤起 23 元/公斤。"
+    },
+    {
+      "name": "马尼拉空运（300 公斤起，普货）",
+      "price": 22.5,
+      "currency": "CNY",
+      "unit": "元/公斤",
+      "originalPrice": null,
+      "note": "马尼拉包派，双清包税到门，约 3-5 天。11 月运价：普货 300 公斤起 22.5 元/公斤。"
+    },
+    {
+      "name": "马尼拉空运（敏感货，100 公斤起）",
+      "price": 31,
+      "currency": "CNY",
+      "unit": "元/公斤",
+      "originalPrice": null,
+      "note": "敏感货空运 100 公斤起，需提前确认品名与所需资料，具体以客服报价为准。"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.phibong.com/",
+      "description": "首页：菲律宾专线物流服务总览、优势与联系方式"
+    },
+    {
+      "url": "https://www.phibong.com/philippines-line/",
+      "description": "菲律宾专线：海运、空运、DDP 双清包税到门服务详情"
+    },
+    {
+      "url": "https://www.phibong.com/pricing/",
+      "description": "价格中心：菲律宾专线运费计费方式与公示起步价"
+    },
+    {
+      "url": "https://www.phibong.com/news/",
+      "description": "物流资讯：菲律宾专线知识库（DDP、海运价格、清关、选货代）"
+    },
+    {
+      "url": "https://www.phibong.com/faq/",
+      "description": "常见问题：运输时效、报价、清关、包装、跟踪、单证问答"
+    },
+    {
+      "url": "https://www.phibong.com/cases/",
+      "description": "客户案例：已承运的品类与运输方式"
+    },
+    {
+      "url": "https://www.phibong.com/about/",
+      "description": "关于我们：公司介绍、仓储与操作能力"
+    },
+    {
+      "url": "https://www.phibong.com/contact/",
+      "description": "联系我们：电话、微信、邮箱、地址与在线留言"
+    },
+    {
+      "url": "https://www.phibong.com/tracking/",
+      "description": "货物跟踪：运单查询方式"
+    }
+  ],
+  "about": "https://www.phibong.com/about/",
+  "contact": "https://www.phibong.com/contact/",
+  "sameAs": [
+    "https://baike.baidu.com/item/%E6%B7%B1%E5%9C%B3%E5%B8%82%E8%8F%B2%E9%82%A6%E5%9B%BD%E9%99%85%E7%89%A9%E6%B5%81%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+  ],
+  "llmsTxt": "https://www.phibong.com/llms.txt",
+  "llmsFullTxt": "https://www.phibong.com/llms-full.txt",
+  "updated": "2026-11-05"
+}
