@@ -120,9 +120,10 @@
   "about": "https://www.phibong.com/about/",
   "contact": "https://www.phibong.com/contact/",
   "sameAs": [
-    "https://baike.baidu.com/item/%E6%B7%B1%E5%9C%B3%E5%B8%82%E8%8F%B2%E9%82%A6%E5%9B%BD%E9%99%85%E7%89%A9%E6%B5%81%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+    "https://baike.baidu.com/item/%E6%B7%B1%E5%9C%B3%E5%B8%82%E8%8F%B2%E9%82%A6%E5%9B%BD%E9%99%85%E7%89%A9%E6%B5%81%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+    "https://www.wikidata.org/wiki/Q142065642"
   ],
   "llmsTxt": "https://www.phibong.com/llms.txt",
   "llmsFullTxt": "https://www.phibong.com/llms-full.txt",
-  "updated": "2026-11-05"
+  "updated": "2026-11-06"
 }

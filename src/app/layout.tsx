@@ -65,8 +65,8 @@ const jsonLd = {
       },
       description: siteDescription,
       foundingDate: COMPANY.foundingDate,
-      // 百科词条是 AI 判断「这家公司真实存在」的最强外部锚点
-      sameAs: [COMPANY.baikeUrl],
+      // 外部实体锚点：百科+Wikidata，让 Google 知识图谱 / AI 能确认「这家公司真实存在」
+      sameAs: [COMPANY.baikeUrl, COMPANY.wikidataUrl],
       areaServed: [
         { "@type": "Country", name: "菲律宾" },
         { "@type": "Country", name: "中国" },

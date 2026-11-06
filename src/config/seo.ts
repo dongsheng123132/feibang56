@@ -30,6 +30,8 @@ export const COMPANY = {
   foundingDate: '2021-07-02',
   /** 百度百科词条（2026-11-04 极速创建，信息引自国家企业信用信息公示系统） */
   baikeUrl: 'https://baike.baidu.com/item/%E6%B7%B1%E5%9C%B3%E5%B8%82%E8%8F%B2%E9%82%A6%E5%9B%BD%E9%99%85%E7%89%A9%E6%B5%81%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8',
+  /** Wikidata 词条（2026-11-06 创建，Q142065642，含官网/成立日期/总部/行业声明） */
+  wikidataUrl: 'https://www.wikidata.org/wiki/Q142065642',
   locality: '深圳市',
   region: '广东省',
   country: 'CN',

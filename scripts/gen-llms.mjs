@@ -187,7 +187,7 @@ const SUMMARY = {
   pages: PAGES.map(([route, desc]) => ({ url: `${SITE_URL}${route}`, description: desc })),
   about: `${SITE_URL}/about/`,
   contact: `${SITE_URL}/contact/`,
-  sameAs: [COMPANY.baikeUrl],
+  sameAs: [COMPANY.baikeUrl, COMPANY.wikidataUrl],
   llmsTxt: `${SITE_URL}/llms.txt`,
   llmsFullTxt: `${SITE_URL}/llms-full.txt`,
   updated: today,
